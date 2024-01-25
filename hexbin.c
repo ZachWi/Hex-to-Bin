@@ -40,7 +40,7 @@ char* hex2bin(const char* hexstr) {
     for (size_t i = 0; i < hexlen; ++i) {
         const char* bindig = hexbin(hexstr[i]);
         if (bindig == NULL) {
-            fprintf(stderr, "Error: %c\n", hexstr[i]);
+            perror("hex error");
             exit(EXIT_FAILURE);
         }
         strcat(binstr, bindig);
